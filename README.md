@@ -1,107 +1,78 @@
-Aplicación de Amigo Secreto
+Amigo Secreto Futurista
 
-📝 Descripción
-Esta es una aplicación web interactiva que permite organizar sorteos de "Amigo Secreto". 
-Los usuarios pueden ingresar nombres de participantes y realizar sorteos aleatorios,
-asegurando que no se repitan las selecciones hasta que todos los participantes hayan sido sorteados.
+¡Bienvenido al Amigo Secreto Futurista! Este es un juego interactivo y moderno para organizar sorteos de amigo secreto de manera divertida y visualmente atractiva. Con un diseño futurista, efectos de neón y una experiencia responsiva, este proyecto es ideal para cualquier reunión o evento.
 
-✨ Características principales
+🚀 Características
+Diseño Futurista: Paleta de colores neón, efectos de cristal (glassmorphism) y sombras brillantes.
+Responsivo: Adaptado para dispositivos móviles, tablets y pantallas grandes.
+Interactividad Mejorada:
+Validación de nombres duplicados.
+Posibilidad de eliminar participantes.
+Animaciones suaves al agregar o eliminar nombres.
+Mensajes de error claros y visuales.
+Sorteo Dinámico: Resultados animados y asignaciones aleatorias de amigos secretos.
+Accesibilidad: Etiquetas ARIA, estructura semántica y mensajes de feedback para lectores de pantalla.
 
-Interfaz de usuario intuitiva y amigable
-Agregar y eliminar participantes de forma dinámica
-Sorteo aleatorio sin repetición
-Visualización temporal del resultado (3 segundos)
-Diseño responsive
-Validación de entradas
-Soporte para tecla Enter al agregar nombres
+🖥️ Capturas de Pantalla
+Pantalla Principal
+<img width="1399" alt="amigo secreto" src="https://github.com/user-attachments/assets/493e5e08-068b-4205-b67d-d51464b544d9" />
 
-🛠️ Tecnologías utilizadas
+Sorteo en Proceso
+<img width="1369" alt="amigo secreto2" src="https://github.com/user-attachments/assets/0f19985f-abc4-4441-9298-2f5a0b6cef33" />
 
-HTML5
-CSS3
-JavaScript (Vanilla)
-Google Fonts (Inter y Merriweather)
 
-🚀 Instalación
+📂 Estructura del Proyecto
+Challengue-AmigoSecreto/
+├── index.html        # Archivo principal del juego
+├── style.css         # Estilos futuristas y responsivos
+├── app.js            # Lógica del juego
+├── assets/           # Imágenes y recursos
+└── README.md         # Documentación del proyecto
 
-Clona este repositorio:
+🛠️ Instalación
+Clona el repositorio:
+bash
+Copy Code
+git clone https://github.com/Yeashua7/Challengue-AmigoSecreto.git
+Navega al directorio del proyecto:
+bash
+Copy Code
+cd Challengue-AmigoSecreto
+Abre el archivo index.html en tu navegador:
+Puedes hacerlo directamente haciendo doble clic en el archivo.
+O utiliza una extensión como Live Server en VS Code para una experiencia más fluida.
 
-git clone https://github.com/Yesshua/Challengue-AmigoSecreto
+📋 Instrucciones de Uso
+Ingresa los nombres de los participantes en el campo de texto.
+Haz clic en el botón "Añadir" o presiona la tecla Enter para agregar un nombre.
+Revisa la lista de participantes. Si necesitas eliminar un nombre, haz clic en el botón "✕" junto al nombre.
+Una vez que tengas al menos 4 participantes, haz clic en el botón "Realizar Sorteo".
+Observa los resultados animados en la sección de resultados.
 
-Estructura de archivos necesaria:
+🎨 Personalización
+Si deseas personalizar el diseño o las funcionalidades:
 
-amigo-secreto/
-│
-├── index.html
-├── style.css
-├── app.js
-└── assets/
-    ├── amigo-secreto.png
-    └── play_circle_outline.png
+Colores y Estilos: Modifica las variables CSS en el archivo style.css (ubicadas en :root).
+Lógica del Juego: Ajusta las funciones en el archivo app.js para agregar nuevas reglas o funcionalidades.
+Imágenes: Cambia las imágenes en la carpeta assets para personalizar el logo o los íconos.
 
-Abre el archivo index.html en tu navegador web preferido.
+🤝 Contribuciones
+¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto:
 
-💻 Uso
+Haz un fork del repositorio.
+Crea una nueva rama para tus cambios:
+bash
+Copy Code
+git checkout -b feature/nueva-funcionalidad
+Realiza tus cambios y haz un commit:
+bash
+Copy Code
+git commit -m "Agregada nueva funcionalidad"
+Envía un pull request.
 
-Ingresa el nombre de un participante en el campo de texto
-Agrega el nombre usando el botón "Añadir" o presionando Enter
-Repite el proceso para todos los participantes
-Presiona "Sortear amigo" para realizar el sorteo
-El resultado se mostrará por 3 segundos
+📝 Licencia
+Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
 
-🔍 Funcionalidades detalladas
-Agregar participantes
-function agregarAmigo() {
-    // Validación y agregado de nombres
-}
-
-Validación de campos vacíos
-Limpieza automática del campo después de agregar
-Actualización en tiempo real de la lista
-
-Sorteo
-function sortearAmigo() {
-    // Lógica de sorteo aleatorio
-}
-
-Sistema de control para evitar repeticiones
-Reinicio automático cuando todos han sido sorteados
-Visualización temporal del resultado
-
-⚙️ Personalización
-Puedes modificar las variables CSS para cambiar los colores:
-:root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
-}
-
-🎨 Estilos
-La aplicación utiliza un diseño moderno con:
-
-Esquema de colores armónico
-Tipografías de Google Fonts
-Diseño responsive
-Efectos hover en botones
-Sombras y bordes redondeados
-
-🤝 Contribución
-Las contribuciones son bienvenidas:
-
-Fork el proyecto
-Crea una rama para tu característica (git checkout -b feature/AmazingFeature)
-Commit tus cambios (git commit -m 'Add some AmazingFeature')
-Push a la rama (git push origin feature/AmazingFeature)
-Abre un Pull Request
-
-📄 Licencia
-Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE.md para más detalles.
-👥 Contacto
-Jesus Rivas - jesusrimart7@gmail.com
-Link del proyecto: https://github.com/Yesshua/Challengue-AmigoSecreto
-
-⌨️ con ❤️ por Jesus Rivas 😊
+💡 Créditos
+Diseño y Desarrollo: [Yeashua7]
+Inspiración: Proyecto original de Yeashua7.
