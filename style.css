@@ -3,7 +3,7 @@
     --color-secondary: #570A57;
     --color-accent: #A91079;
     --color-highlight: #F806CC;
-    --color-text: #FFFFFF;
+    --color-text: #fff;
     --color-button: #A91079;
     --color-button-hover: #F806CC;
     --neon-shadow: 0 0 10px rgba(248, 6, 204, 0.5);
@@ -61,6 +61,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.section-title {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 .input-wrapper {
     display: flex;
     gap: 10px;
@@ -81,6 +88,10 @@ body {
     box-shadow: var(--neon-shadow);
 }
 
+.input-name::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .button-add {
     padding: 1rem 2rem;
     border: none;
@@ -98,21 +109,11 @@ body {
     transform: translateY(-2px);
 }
 
-.name-list {
+.button-container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    margin: 1rem 0;
-    padding: 1rem;
-}
-
-.name-list li {
-    background: var(--glass-effect);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    color: var(--color-text);
-    backdrop-filter: blur(4px);
-    animation: fadeIn 0.3s ease;
+    flex-wrap: wrap;
 }
 
 .button-draw {
@@ -139,12 +140,109 @@ body {
     transform: translateY(-2px);
 }
 
+.button-clear {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background: #FF4444;
+    color: var(--color-text);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--neon-shadow);
+}
+.button-clear:hover {
+    background: #FF8888;
+    transform: translateY(-2px);
+}
+
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 0;
+    padding: 1rem;
+    list-style: none;
+}
+
+.name-list li {
+    background: var(--glass-effect);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--color-text);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.name-list button {
+    background: none;
+    border: none;
+    color: #FF4444;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 5px;
+    transition: color 0.2s;
+}
+.name-list button:hover {
+    color: #FF8888;
+}
+
 .result-list {
     text-align: center;
     color: var(--color-highlight);
     font-size: 1.2rem;
     margin-top: 1rem;
     text-shadow: var(--neon-shadow);
+    list-style: none;
+}
+
+.result-list button {
+    background: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+}
+.result-list button:hover {
+    background: var(--color-highlight);
+}
+
+/* Spinner styles */
+.spinner {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--color-text);
+}
+
+.spinner.hidden {
+    display: none;
+}
+
+.spinner-circle {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(248, 6, 204, 0.3);
+    border-top: 4px solid var(--color-highlight);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+    box-shadow: var(--neon-shadow);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes fadeIn {
@@ -158,18 +256,51 @@ body {
     }
 }
 
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background: #fff;
+    color: #222;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 0 30px #A91079;
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 2rem;
+    color: #A91079;
+    cursor: pointer;
+}
+
 /* Media Queries para responsividad */
 @media (max-width: 768px) {
     .input-wrapper {
         flex-direction: column;
     }
-    
     .input-name, .button-add {
         width: 100%;
     }
-    
     .section-title {
         font-size: 1.5rem;
+    }
+    .button-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -177,7 +308,6 @@ body {
     .main-title {
         font-size: 2rem;
     }
-    
     .input-section {
         padding: 1rem;
     }
